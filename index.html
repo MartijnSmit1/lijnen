@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Linear</title>
+    <script>
+        function eenLijn() {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, 600, 300);
+            var x1 = document.getElementById('x1').value;
+            var y1 = document.getElementById('y1').value;
+            var x2 = document.getElementById('x2').value;
+            var y2 = document.getElementById('y2').value;
+            context.strokeStyle = "#fff";
+            context.beginPath();
+            context.moveTo(x1, y1);
+            context.lineTo(x2, y2);
+            context.stroke();
+            context.closePath();
+
+            slope1 = (y1 - y2) / (x1 - x2);
+            console.log(slope1);
+
+            var x3 = document.getElementById('x3').value;
+            var y3 = document.getElementById('y3').value;
+            var x4 = document.getElementById('x4').value;
+            var y4 = document.getElementById('y4').value;
+            context.strokeStyle = "#fff";
+            context.beginPath();
+            context.moveTo(x3, y3);
+            context.lineTo(x4, y4);
+            context.stroke();
+            context.closePath();
+
+            slope2 = (y1 - y2) / (x1 - x2);
+            console.log(slope2);
+        };
+    </script>
+</head>
+
+<body>
+    <p>Martijn Smit MD1B</p>
+    <canvas id="canvas" width="600" height="300" style="background-color: #000"></canvas>
+    <p>lijn 1</p>
+    <label>X1:</label>
+    <input value='100' onchange="eenLijn()" type='number' id='x1'>
+    <label>Y1:</label>
+    <input value='100' onchange="eenLijn()" type='number' id='y1'>
+    <label>X2:</label>
+    <input value='300' onchange="eenLijn()" type='number' id='x2'>
+    <label>Y2:</label>
+    <input value='200' onchange="eenLijn()" type='number' id='y2'>
+    <input type="button" onclick='eenLijn()' value="GO">
+    <br>
+    <p>lijn 2</p>
+    <label>X1:</label>
+    <input value='300' onchange="eenLijn()" type='number' id='x3'>
+    <label>Y1:</label>
+    <input value='300' onchange="eenLijn()" type='number' id='y3'>
+    <label>X2:</label>
+    <input value='100' onchange="eenLijn()" type='number' id='x4'>
+    <label>Y2:</label>
+    <input value='100' onchange="eenLijn()" type='number' id='y4'>
+    <input type="button" onclick='eenLijn()' value="GO">
+
+</body>
+<script>
+    eenLijn();
+</script>
+
+</html>
